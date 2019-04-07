@@ -4,7 +4,7 @@ self.__precacheManifest = [
     "url": "/reactWork-contextAPI/static/media/result5.ab0edda0.png"
   },
   {
-    "revision": "adf221d2113e73abbbf6",
+    "revision": "a2f45d290fcafe4408b9",
     "url": "/reactWork-contextAPI/static/css/main.c2a87348.chunk.css"
   },
   {
@@ -36,8 +36,8 @@ self.__precacheManifest = [
     "url": "/reactWork-contextAPI/static/media/result4.ee9a3642.png"
   },
   {
-    "revision": "adf221d2113e73abbbf6",
-    "url": "/reactWork-contextAPI/static/js/main.c4ca60d9.chunk.js"
+    "revision": "a2f45d290fcafe4408b9",
+    "url": "/reactWork-contextAPI/static/js/main.0b3c8f8d.chunk.js"
   },
   {
     "revision": "178b2c3d58a1aeaa4fb2e3eea28cf9af",
@@ -68,7 +68,7 @@ self.__precacheManifest = [
     "url": "/reactWork-contextAPI/static/media/panasonic.ec3791a2.png"
   },
   {
-    "revision": "289368f70d0852c3cef616d75bb0b7ae",
+    "revision": "5e5687c5366bc7f5c1da5ac99031e5d8",
     "url": "/reactWork-contextAPI/index.html"
   }
 ];
