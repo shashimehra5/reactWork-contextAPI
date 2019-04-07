@@ -1,0 +1,182 @@
+body.modal-open {
+    overflow: hidden;
+    height: 100%;
+}
+
+// .main-container {
+//     @include for-tablet-portrait-up {
+//         padding-left: 15px;
+//         padding-right: 15px;
+//     }
+// }
+// .content-container{
+//     padding: 15px;
+//     @include for-tablet-portrait-up {
+//         width: 1140px;
+//         margin: auto;
+//     }
+//     .row.wrap {
+//         padding: 15px; 
+//     }
+// }
+.btn {
+    border-radius: 0;
+}
+
+.view-work-btn {
+    margin-bottom: 10px;
+}
+
+hr {
+    background-color: #e2e2e2;
+	border: none;
+	height: 1px;
+    margin: 10px 0;
+    @include clearfix;
+}
+
+.contactUs {
+    padding: 80px 10px;
+    @include for-desktop-up {
+        padding: 80px;
+    }
+    .contactForm {
+        padding-top: 15px;
+        @include for-tablet-landscape-up {
+            padding-top: 0;
+        }
+    }
+    input[type=submit] {
+        border-radius: 0px;
+        background-color: $color-button;
+        color: $color-white;
+        padding: 10px 40px;
+        font-size: 15px;
+        font-weight: bold;
+    }
+
+    .invalid-field {
+        input, textarea {
+            border-bottom: 1px solid $color-error;
+        }
+        .invalid-feedback {
+            display: block;
+        }
+    }
+}
+
+.input-without-border  {
+    margin-bottom: 50px;
+    input, input:focus, .input, textarea {
+        border-top: none transparent;
+        border-left: none transparent;
+        border-right: none transparent;
+        border-bottom-color: $color-input-border;
+        width: 100%;
+        outline: none;
+        border-width: 2px;
+        padding: 10px;
+        @include border-radius(0px, 0px, 0px, 0px);
+    }
+}
+
+.input-without-border,
+    .input-without-border.focus {
+        position: relative;
+        input, textarea {
+            z-index: 1;
+            position: relative;
+            background: transparent;
+            line-height: 16px;
+            &:focus ~ label,
+            &.focus ~ label {
+                font-size: 12px;
+                top: -5px;
+            }
+            & ~ label {
+                position: absolute;
+                left: 0px;
+                top: 15px;
+                color: $color-black;
+                font-size: 16px;
+                line-height: 14px;
+                font-weight: bold;
+                transition: all 0.2s linear;
+                
+            }
+            &.filled {
+                & ~ label {
+                    font-size: 12px;
+                    top: -5px;
+                }
+            }
+            // @include placeholder {
+            //     color: rgba(26, 26, 26, 0.6);
+            //     font-size: 15px;
+            // }
+        }
+        textarea {
+            z-index: 1;
+            position: relative;
+            resize: none;
+            padding:10px;
+            padding-top: 20px;
+            background: transparent;
+            line-height: 16px;
+            font-size: 13px;
+            color: #4a4a4a;
+
+            &.common-textarea{
+                border-top: none transparent;
+                border-left: none transparent;
+                border-right: none transparent;
+                border-bottom-color: rgba(26, 26, 26, 0.6);
+                width: 100%;
+                outline: none;
+                border-width: 2px;
+                & ~ label {
+                    left: 0px;
+                    font-size: 16px;
+                    color: $color-black;
+                }
+            }
+
+            &:focus ~ label {
+                font-size: 12px;
+                top: -5px; left: 0;
+               
+            }
+            & ~ label {
+                position: absolute;
+                left: 0px;
+                top: 15px;
+                font-size: 16px;
+                line-height: 14px;
+                transition: all 0.2s linear;
+                color: $color-black;
+                font-weight: bold;
+                background: #fff;
+            }
+            &.filled {
+                & ~ label {
+                    font-size: 12px;
+                    top: -5px;
+                }
+            }
+
+            &.edit-summary{
+                border-bottom-color: #ddd;
+                 & ~ label {
+                    font-size: 12px;
+                    top: auto;
+                    bottom: 10px; left: 0;
+                }
+                &:focus ~ label{
+                    display: none;
+                }
+                &.focus ~ label{
+                    top:0;
+                }
+            }
+        }
+    }

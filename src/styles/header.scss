@@ -1,0 +1,240 @@
+.mainBanner {
+    background-image: url('../src/images/bannerbig.jpg');
+    position: relative;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-attachment: fixed;
+    background-position: 10% 20%;
+    background-repeat: no-repeat;
+    -webkit-transition: all .3s ease-in-out;
+    -moz-transition: all .3s ease-in-out;
+    -o-transition: all .3s ease-in-out;
+    -ms-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
+    width: 100%;
+    height: calc(100vh - 100px);
+    margin-bottom: 30px;
+    .btn {
+        border-radius: 0;
+        padding: 10px 30px;
+        position: absolute;
+        bottom: 30px;
+        right: 30px;
+    }
+    .workHeading {
+        font-size: 7rem;
+        font-weight: bold;
+        position: absolute;
+        left: 30px;
+        top: 25%;
+        @include for-phone-only{
+            left: 0;
+            top: 30%;
+        }
+    }
+}
+
+/* nav bar scss*/
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+}
+header {
+    transition: width .15s ease 0s;
+}
+header.sticky {
+    background: hsla(0,0%,100%,.95);
+    position: fixed;
+    width: 100%;
+    left:0;
+    animation: slide-down .7s;
+    z-index: 999;
+    border-bottom: 1px solid $color-background;
+    box-shadow: 0 4px 18px 0 rgba(0,0,0,.12), 0 7px 10px -5px rgba(0,0,0,.15);
+    .navbar {
+        border-bottom: 0;
+    }
+}
+
+@keyframes slide-down {
+    0% {
+        opacity: 0;
+        -ms-transform: translateY(-100%);
+        -webkit-transform: translateY(-100%);
+        transform: translateY(-100%)
+    }
+
+    100% {
+        opacity: .9;
+        -ms-transform: translateY(0);
+        -webkit-transform: translateY(0);
+        transform: translateY(0)
+    }
+}
+
+nav {
+    border-bottom: 1px solid $color-black;
+    a {
+        color: $color-black;
+    }
+    &.menu-dark {
+        color: $color-white;
+        border-bottom: 1px solid $color-white;
+        position: relative !important;
+        width: auto;
+        padding: 10px 0px !important;
+    }
+    button {
+        padding: 0;
+        margin: 0;
+        background: 0 0;
+        border: 0;
+        outline: transparent;
+        -moz-appearance: none;
+        appearance: none;
+        -webkit-appearance: none;
+        &:focus {
+            outline: none;
+        }
+    }
+    .menuButton {
+        position: relative;
+        text-transform: uppercase;
+        font-weight: 600;
+        letter-spacing: .04em;
+        text-decoration: none;
+        padding-right: 30px;
+        transition: .3s cubic-bezier(.455,.03,.515,.955);
+        transition-property: color,-webkit-transform;
+        transition-property: transform,color;
+        transition-property: transform,color,-webkit-transform;
+        height: 30px;
+        &::after, &::before {
+            position: absolute;
+            right: 0;
+            content: "";
+            width: 20px;
+            height: 2px;
+            display: block;
+            background-color: $color-black;
+            top: 50%;
+            transition: .3s cubic-bezier(.455,.03,.515,.955);
+            transition-property: background-color,-webkit-transform;
+            transition-property: transform,background-color;
+            transition-property: transform,background-color,-webkit-transform;
+        }
+        &::before {
+            -webkit-transform: translate3d(0,-50%,0) translate3d(0,-3px,0);
+            transform: translate3d(0,-50%,0) translate3d(0,-3px,0)
+        }
+        &::after {
+            -webkit-transform: translate3d(0,-50%,0) translate3d(0,3px,0);
+            transform: translate3d(0,-50%,0) translate3d(0,3px,0)
+        }
+        &.menuOpen {
+            color: #fff;
+            &::after, &::before {
+                background-color: #fff;
+            }
+            &::before {
+                -webkit-transform: translate3d(0,-50%,0) translateZ(0) rotate(-45deg);
+                transform: translate3d(0,-50%,0) translateZ(0) rotate(-45deg)
+            }
+            &::after {
+                -webkit-transform: translate3d(0,-50%,0) translateZ(0) rotate(45deg);
+                transform: translate3d(0,-50%,0) translateZ(0) rotate(45deg)
+            }
+        }
+    }
+}
+
+.menu-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    pointer-events: none;
+    margin-left: auto;
+    height: 100%;
+    background-color: $color-black;
+    // -webkit-transform: scale(1.1);
+    // transform: scale(1.1);
+    opacity: 0;
+    transition: .4s cubic-bezier(.455,.03,.515,.955);
+    transition-property: opacity,-webkit-transform;
+    transition-property: transform,opacity;
+    transition-property: transform,opacity,-webkit-transform;
+    z-index: -1;
+    .nav-scroll{
+        overflow-y: auto;
+        height: 100%;
+    }
+    &.nav-show{
+         pointer-events: all;
+        // -webkit-transform: scale(1);
+        // transform: scale(1);
+        // opacity: 1;
+        -webkit-transition: opacity .5s linear 0.2s;
+           -moz-transition: opacity .5s linear 0.2s;
+                     transition: opacity .5s linear 0.2s;
+       opacity: 1;
+        ul {
+            list-style: none;
+            text-transform: uppercase;
+            padding-left: 0px;
+            &.main-menu{
+                padding-top: 100px;
+                font-size: 3rem;
+                font-weight: bold;
+                text-align: right;
+                li{
+                    position: relative;
+                    > a:after {
+                        position: absolute;
+                        left: 0;
+                        bottom: 0;
+                        display: block;
+                        content: "";
+                        width: 100%;
+                        height: 0;
+                        border-bottom: 1px solid #272727;
+                    }
+                }
+            }
+        }
+        .left-menu {
+            position: absolute;
+            margin-top: 100px;
+            font-size: 12px;
+            padding-right: 20px;
+            top:0;
+            display: none;
+            background-color:$color-black; 
+            .title{
+                opacity: 0.5;
+            }
+            @include for-tablet-portrait-up {
+                display: block;
+            }
+        }
+        .side-menu {
+            position: absolute;
+            font-size: 12px;
+            padding-right: 20px;
+            bottom: 10px;
+            background-color:$color-black; 
+            display: none;
+            @include for-tablet-portrait-up {
+                display: block;
+            }
+        }
+        a {
+            color: $color-white;
+        }
+    }
+}
