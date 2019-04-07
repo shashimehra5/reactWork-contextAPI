@@ -10,7 +10,6 @@ class GridListView extends Component {
             const observer = lozad();
             observer.observe();
         })
-        console.log('component mounted');
     }
     componentDidUpdate(){
         const observer = lozad();
