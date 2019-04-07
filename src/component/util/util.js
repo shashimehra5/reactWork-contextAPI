@@ -11,10 +11,10 @@ export default {
         url = url.slice(0, -1);
         var params = url;
         var pathname = window.location.pathname;
-        if(window.location.pathname.indexOf('/results')===-1){
-            var omitStr = pathname.substr(pathname.lastIndexOf("/"));
-            pathname  = pathname.replace(omitStr,"/results");
-        }
+        // if(window.location.pathname.indexOf('/results')===-1){
+        //     var omitStr = pathname.substr(pathname.lastIndexOf("/"));
+        //     pathname  = pathname.replace(omitStr,"/results");
+        // }
         var newurl = window.location.protocol + "//" + window.location.host + pathname + '?' + params;
         window.history.pushState({ path: newurl }, '', newurl);
     },
